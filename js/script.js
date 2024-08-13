@@ -12,35 +12,10 @@ console.log(sectionPosition);
 
 
 window.addEventListener("scroll" , changNavColor);
-// window.addEventListener("scroll" , navDisplay);
-
-
-// function navDisplay(){
-//   if(window.scrollY > 100){
-//     nav.classList.add('d-none')
-//   }
-//   if (window.scrollY < 100 || window.scrollY > sectionPosition.top - 150){
-//     nav.classList.remove('d-none')
-//   }
-// }
 
 
 
-// function changNavColor(){
-//   if (window.scrollY > (sectionPosition.top - 150) ) {
-//     nav.classList.add("bg-body-tertiary" );
-//     nav.classList.remove("py-4" ,"mt-3")
-//     links.forEach(link => {
-//       link.style ="color : black";
-//       });
-//   } else {
-//     nav.classList.remove("bg-body-tertiary");
-//     nav.classList.add("py-4" ,"mt-3")
-//     links.forEach(link => {
-//       link.style = "color :white"
-//     });
-//   }
-// }
+
 links.forEach(link => {
   link.style = "color :white"
 });
