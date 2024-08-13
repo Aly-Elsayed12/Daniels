@@ -86,6 +86,36 @@ a{
 
 /* * STRAT NAV / NAV TAPS */
 
+.navbar-default {
+  padding: 20px 0 30px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.nav-scroll {
+  background: #fff;
+  -webkit-box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+  min-height: 60px;
+  line-height: 60px;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 999;
+}
+
+#navbar{
+  transition: all 0.3s;
+}
 .navbar-nav .nav-link{
   position: relative;
 }
@@ -100,7 +130,27 @@ a{
   width: 0;
   background-color: #222;
   transition: all 0.5s;
+  bottom: 26px;
+  left: 9px;
+}
+.nav-pills .nav-link::before {
+  left: 0;
+  bottom: 8px;
+}
+
+.navbar-nav .nav-item #home-a:before{
+  background-color: transparent;
+}
+#navbar .nav-item  span{
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 9px;
+  background-color: white;
+  transition: all 0.5s;
   bottom: 7px;
+  color: white;
+  padding: 0 25px;
 }
 .navbar-nav .nav-link.active::before,
 .navbar-nav .nav-link.show::before{
@@ -136,6 +186,10 @@ header .contant .header-icons a span{
   width: 35px;
   height: 35px;
 }
+.main-title span{
+  font-size: 44px;
+  font-weight: 400;
+} 
 
 /* * START ABOUT STYLE */
 
@@ -315,31 +369,50 @@ footer{
 footer p{
   font-size: 13px;
 }
-h1 span{
-  position: relative;
+.main-title{
+  white-space: nowrap;
 }
-h1 span::before{
-  content: "|";
-  position: relative;
-  margin-left: 2px;
-  top: 0;
-  animation-name:text-type ;
-  animation-duration: 10s;
-  animation-iteration-count:infinite ;
-  font-weight: 400;
+.main-title span{
+  overflow: hidden;
+  transition: 0.3s ease;
+  animation: changWidth 7s 1s ease infinite ;
 }
 
+.main-title span::after{
+  content: "";
+  background-color: white;
+  padding: 1px;
+  position: absolute;
+  bottom: 14px;
+  right: 0px;
+  height: 75%;
+}
+
+.main-title span::before{
+  content: "Larry Daniels";
+  transition: all 0.3s;
+  animation: changWord 7s 1s ease infinite ;
+}
 
 /* & START ANIMATION */
 
-@keyframes text-type {
-  0%{content: "Larry Daaniels|";}
-  30%{content: "Larry Daaniels|";}
-  33%{content: "|";}
-  66%{content: "Developer|";}
-  69%{content: "|";}
-  96%{content: "Designer|";}
-  97%{content: "|";}
+@keyframes changWord {
+  0%, 99% ,100%{
+    content: "Larry Daniels";
+  }40%, 41%{
+    content: "Developer";
+  }60% ,61%{
+    content: "Designer";
+  }
+}
+@keyframes changWidth {
+  0%, 30%, 60% , 100%{
+    width: 100%;
+    padding-right: 8px;
+  }15% , 45% , 75%{
+    width: 0%;
+    padding-right: 0px;
+  }
 }
 
 
@@ -412,3 +485,28 @@ h1 span::before{
     font-size: 7px;
   }
 }
+@media (max-width:992px) {
+  #navbar{
+    margin-top: 0 !important;
+  }
+  .navbar-collapse {
+    background-color: white;
+    margin-top: 0 !important;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 999;
+    top: 65px;
+  }
+  .navbar-nav a {
+    color: black  !important;
+  }
+  #navbarv .navbar-default a:first-child{
+    color: white ;
+  }
+  .nav-scroll i{
+  color: black !important;
+  } 
+}
+

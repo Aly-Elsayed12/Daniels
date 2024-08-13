@@ -13,18 +13,19 @@
 </head>
 <body data-bs-spy="scroll">
   <!-- * START NAV -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-default ">
     <div class="container">
       <a class="navbar-brand fw-800 logo" href="#">DANIELS</a>
-      <button class="navbar-toggler border-0 text-dark " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-dark"></span>
+      <button class="navbar-toggler border-0 text-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-lg-start">
-          <li class="nav-item mx-2 mb-1 mb-md-0">
-            <a class="nav-link active d-inline-block d-lg-block" aria-current="page" href="#home">Home</a>
+          <li class="nav-item mx-2 mb-1 mb-md-0 position-relative">
+            <a class="nav-link active d-inline-block d-lg-block" id="home-a" aria-current="page" href="#home">Home</a>
+            <span></span>
           </li>
-          <li class="nav-item mx-2 mb-1 mb-md-0">
+          <li class="nav-item  mx-2 mb-1 mb-md-0">
             <a class="nav-link d-inline-block d-lg-block" href="#about">About</a>
           </li>
           <li class="nav-item mx-2 mb-1 mb-md-0">
@@ -52,7 +53,10 @@
       <div class="contant position-absolute top-50 start-50 translate-middle text-center">
         <div class="text text-light mb-4">
           <h4 class="fw-800 mb-3">Hello</h4>
-          <h1 class="fw-lighter">I Am <span></span></h1>
+          <div class="main-title d-flex align-items-center justify-content-center">
+            <h1 class="fw-lighter me-3 mb-0">I Am </h1>
+            <span id="title-1" class="position-relative fw-light"></span>
+          </div>
         </div>
         <div class="header-icons d-flex justify-content-center flex-wrap gap-2">
           <a href="#" class="text-light" aria-label="facebook link">
@@ -660,7 +664,7 @@
       <p class="text-center text-secondary w-space">Copy Right 2018 © By Daniels All Rights Reserved</p>
     </div>
   </footer>
-  <script src="js/bootstrap.bundle.min.js">
-  </script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
